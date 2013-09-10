@@ -1,0 +1,4 @@
+vimtastic
+=========
+
+Automate Vim Configuration
