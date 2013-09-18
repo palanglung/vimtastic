@@ -1,0 +1,8 @@
+set nocursorline " don't highlight current line
+
+" keyboard shortcuts
+inoremap jj <ESC>
+
+set background=dark
+set t_Co=256
+colorscheme solarized
