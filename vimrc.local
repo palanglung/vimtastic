@@ -4,5 +4,5 @@ set nocursorline " don't highlight current line
 inoremap jj <ESC>
 
 set background=dark
-set t_Co=256
+set t_Co=16
 colorscheme solarized

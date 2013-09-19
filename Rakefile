@@ -4,6 +4,15 @@ def install_github_bundle(user, package)
   end
 end
 
+def apt_update
+  sh "sudo apt-get update"
+end
+
+def apt_install name
+  %x{sudo apt-cache search #{name}}
+  sh "sudo apt-get install #{name}"
+end
+
 def step(description)
   description = "-- #{description} "
   description = description.ljust(80, '-')
@@ -73,6 +82,17 @@ task :default do
   step 'git submodules'
   sh 'git submodule update --init'
 
+  step "apt_update"
+  apt_update
+  step "install vim"
+  apt_install :vim
+  step "install tmux"
+  apt_install :tmux
+  step "install guake"
+  apt_install :guake
+  step "install xclip"
+  apt_install :xclip
+
   # TODO install gem ctags?
   # TODO run gem ctags?
 
@@ -92,7 +112,7 @@ task :default do
   Rake::Task['install:vundle'].invoke
 
   step "color scheme"
-  puts 
+  puts
   puts 'Manualy command bellow to install the color scheme'
   puts 'rake install:colors:gnome_terminal # if you are using gnome_terminal'
   puts 'rake install:colors:guake # if you are using guake terminal'
