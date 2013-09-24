@@ -4,5 +4,13 @@ set nocursorline " don't highlight current line
 inoremap jj <ESC>
 
 set background=dark
-set t_Co=16
+set term=screen-256color
+set t_Co=256
 colorscheme solarized
+
+set textwidth=79
+set formatoptions+=tcl
+
+if !has("gui_running")
+  set term=xterm
+endif
