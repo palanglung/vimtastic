@@ -70,6 +70,12 @@ namespace :install do
       sh 'colors/gnome-terminal-colors-solarized/set_dark.sh'
     end
 
+    desc "Solarized DirColors"
+    task :dircolors do
+      link_file 'colors/dircolors-solarized/dircolors.ansi-universal', '~/.dircolors'
+    end
+
+    desc "Solarized Guake"
     task :guake do
       sh 'colors/guake-colors-solarized/set_dark.sh'
     end

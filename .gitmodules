@@ -4,3 +4,6 @@
 [submodule "colors/guake-colors-solarized"]
 	path = colors/guake-colors-solarized
 	url = https://github.com/coolwanglu/guake-colors-solarized
+[submodule "colors/dircolors-solarized"]
+	path = colors/dircolors-solarized
+	url = https://github.com/seebi/dircolors-solarized
