@@ -36,6 +36,10 @@ def get_backup_path(path)
   backup_path
 end
 
+def x?
+  !!ENV["DISPLAY"]
+end
+
 
 def link_file(original_filename, symlink_filename)
   original_path = File.expand_path(original_filename)
@@ -95,9 +99,9 @@ task :default do
   step "install tmux"
   apt_install :tmux
   step "install guake"
-  apt_install :guake
+  apt_install :guake if x?
   step "install xclip"
-  apt_install :xclip
+  apt_install :xclip if x?
 
   # TODO install gem ctags?
   # TODO run gem ctags?
